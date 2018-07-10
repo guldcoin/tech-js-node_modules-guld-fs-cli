@@ -1,11 +1,11 @@
-# guld-cli
+# guld-fs-cli
 
-Universal wrapper for guld commands. Discovers `guld-*` commands and allows them to be called as `guld *` from the main script.
+Guld file system abstraction CLI.
 
 ### Install
 
 ```
-npm i -g guld-cli
+npm i -g guld-fs-cli
 ```
 
 ### Usage
@@ -14,23 +14,20 @@ npm i -g guld-cli
 ##### CLI
 
 ```
-  Usage: guld [options] [command]
+  Usage: guld-fs-cli [options] [command]
 
-  Guld standardized Command Line Interface (CLI) for git.
+  Guld file system abstraction CLI.
 
   Options:
 
-    -V, --version      output the version number
-    -u, --user         The user name to set up.
-    -r, --recipient    The recipient of a message or transaction.
-    -f, --fingerprint  The PGP fingerprint to sign with.
-    -h, --help         output usage information
+    -V, --version                           output the version number
+    -u --user <name>                        The user name to run as.
+    -r --recursive                          Perform command recursively.
+    -h, --help                              output usage information
 
   Commands:
 
-    config             Manage git config files the guld way.
-    env                Guld environment detection module.
-    git                Guld standardized Command Line Interface (CLI) for git.
-    help [cmd]         display help for [cmd]
+    foreach <command>                       Run command for each file and/or directory in the given directory.
+    str-replace <path> <old-str> <new-str>  Replace old-string with new-string for all files in path.
+    help [cmd]                              display help for [cmd]
 ```
-

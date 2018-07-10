@@ -1,34 +1,19 @@
 #!/usr/bin/env node
+// eslint-disable-file no-console
 const program = require('commander')
-const pkg = require('./package.json')
-const VERSION = pkg.version
-const NAME = Object.keys(pkg.bin)[0]
-
-const COMMANDS = {
-  'config': ['Manage git config files the guld way.', {isDefault: true}],
-  'env': ['Guld environment detection module.'],
-  'git': ['Guld standardized Command Line Interface (CLI) for git.']
-}
+const VERSION = require('./package.json').version
 
 program
-  .name('guld')
+  .name('guld-fs-cli')
   .version(VERSION)
-  .description('Guld decentralized internet CLI.')
-  .option('-u, --user', 'The user name to set up.')
-  .option('-r, --recipient', 'The recipient of a message or transaction.')
-  .option('-f, --fingerprint', 'The PGP fingerprint to sign with.')
+  .description('Guld file system abstraction CLI.')
+  .option('-u --user <name>', 'The user name to run as.', (n) => {
+    if (n) process.env.GULDNAME = global.GULDNAME = n
+    return true
+  })
+  .option('-r --recursive', 'Perform command recursively.')
   // .option('-q, --quiet', '')
-
-for (var cmd in COMMANDS) {
-  var cmds = COMMANDS[cmd]
-  var desc = cmds.shift()
-  if (cmds.length > 0) {
-    program.command(cmd, desc, ...cmds).description(desc)
-  } else {
-    program.command(cmd, desc).description(desc)
-  }
-}
+  .command('foreach <command>', 'Run command for each file and/or directory in the given directory.')
+  .command('str-replace <path> <old-str> <new-str>', 'Replace old-string with new-string for all files in path.')
 
 program.parse(process.argv)
-
-module.exports = program
