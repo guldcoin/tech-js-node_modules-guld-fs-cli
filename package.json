@@ -1,6 +1,6 @@
 {
   "name": "guld-fs-cli",
-  "version": "1.1.7",
+  "version": "1.1.8",
   "description": "Guld file system abstraction CLI.",
   "bin": {
     "guld-fs": "./cli.js"
@@ -20,9 +20,9 @@
   "license": "MIT",
   "dependencies": {
     "commander": "^2.16.0",
-    "guld-fs": "^1.2.9",
-    "guld-fs-foreach-cli": "^1.2.7",
-    "guld-fs-str-replace-cli": "^1.1.7"
+    "guld-fs": "^1.2.10",
+    "guld-fs-foreach-cli": "^1.2.8",
+    "guld-fs-str-replace-cli": "^1.1.8"
   },
   "devDependencies": {
     "eslint": "^5.1.0",
