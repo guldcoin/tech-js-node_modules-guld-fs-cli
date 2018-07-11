@@ -20,9 +20,9 @@
   "license": "MIT",
   "dependencies": {
     "commander": "^2.16.0",
-    "guld-fs": "^1.2.11",
-    "guld-fs-foreach-cli": "^1.2.9",
-    "guld-fs-str-replace-cli": "^1.1.9"
+    "guld-fs": "^1.2.12",
+    "guld-fs-foreach-cli": "^1.2.10",
+    "guld-fs-str-replace-cli": "^1.1.10"
   },
   "devDependencies": {
     "eslint": "^5.1.0",
