@@ -36,7 +36,6 @@ guld-fs --help
 
     foreach <command>                       Run command for each file and/or directory in the given directory.
     str-replace <path> <old-str> <new-str>  Replace old-string with new-string for all files in path.
-    help [cmd]                              display help for [cmd]
 
 ```
 
