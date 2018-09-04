@@ -2,6 +2,7 @@
 // eslint-disable-file no-console
 const program = require('commander')
 const thispkg = require(`${__dirname}/package.json`)
+const runCLI = require('guld-cli-run')
 
 program
   .name(thispkg.name.replace('-cli', ''))
@@ -16,9 +17,5 @@ program
   .command('foreach <command>', 'Run command for each file and/or directory in the given directory.')
   .command('str-replace <path> <old-str> <new-str>', 'Replace old-string with new-string for all files in path.')
 
-if (process.argv.length === 2) {
-  program.help()
-} else if (process.argv.length > 2) {
-  program.parse(process.argv)
-}
+runCLI.bind(program)()
 module.exports = program
