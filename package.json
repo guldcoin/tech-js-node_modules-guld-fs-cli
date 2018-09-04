@@ -20,7 +20,7 @@
   "license": "MIT",
   "dependencies": {
     "commander": "^2.17.1",
-    "guld-fs": "^1.3.2",
+    "guld-fs": "^1.3.3",
     "guld-fs-foreach-cli": "^1.2.16",
     "guld-fs-str-replace-cli": "^1.1.14"
   },
