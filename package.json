@@ -3,18 +3,21 @@
   "version": "1.1.15",
   "description": "Guld file system abstraction CLI.",
   "bin": {
-    "guld-fs": "./cli.js"
+    "guld-fs": "cli.js"
   },
   "scripts": {
     "lint": "eslint --env browser *.js*",
-    "fix": "eslint --fix *.js*"
+    "fix": "eslint --fix *.js*",
+    "test": "mocha test/*.js",
+    "test:lint": "npm run lint && npm run test"
   },
   "keywords": [
     "guld",
     "security",
     "password",
     "cli",
-    "encryption"
+    "encryption",
+    "node"
   ],
   "author": "isysd",
   "license": "MIT",
@@ -33,7 +36,9 @@
     "eslint-plugin-node": "^7.0.1",
     "eslint-plugin-promise": "^4.0.0",
     "eslint-plugin-standard": "^4.0.0",
-    "pre-commit": "^1.2.2"
+    "pre-commit": "^1.2.2",
+    "chai": "^4.1.2",
+    "mocha": "^5.2.0"
   },
   "pre-commit": [
     "lint"
@@ -42,7 +47,7 @@
   "engines": {
     "node": ">=7"
   },
-  "homepage": "https://bitbucket.org/isysd/tech-js-node_modules-guld-fs-cli#readme",
+  "homepage": "https://guld.tech/cli/guld-fs-cli.html",
   "preferGlobal": true,
-  "repository": "git@bitbucket.org:isysd/tech-js-node_modules-guld-fs-cli.git"
+  "repository": "https://bitbucket.org/guld/tech-js-node_modules-guld-fs-cli"
 }
